@@ -10,6 +10,7 @@ class FortunetellingsController < ApplicationController
     your_birthday?
     #年齢を確認
     constellation(@month, @day)
+    #運勢をランダムに表示
     @fortune = %w(大吉 中吉 吉 小吉 凶 大凶).shuffle[1]
   end
 end

@@ -1,6 +1,7 @@
 module FortunetellingsHelper
   require "date"
 
+  #正規表現を使い今日の日付を取得($2には月 $3には日付が格納される)
   def your_birthday?
     today = Date.today
     /(^\d{4})-(\d{2})-(\d{2})/ =~ today.to_s
@@ -9,6 +10,7 @@ module FortunetellingsHelper
     end
   end
 
+  #my_dayにstring型で連結し、その後整数に変換(例 "02" + "22" = "222" → 222)
   def constellation(month, day)
     my_day = (month + day).to_i
     @mine = if my_day.between?(120, 218)
