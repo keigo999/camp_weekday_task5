@@ -37,4 +37,11 @@ module FortunetellingsHelper
               "山羊座"
             end
   end
+
+  def calcage(birthdayStr)
+    if birthdayStr !~ /^[0-9]{8}$/
+      return -1
+    end
+    return (Date.today.strftime("%Y%m%d").to_i - birthdayStr.to_i) / 10000
+  end
 end
